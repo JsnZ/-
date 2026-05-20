@@ -7,7 +7,7 @@ interface HeaderBannerProps {
 }
 
 export default function HeaderBanner({ onShowToast }: HeaderBannerProps) {
-  const [imgUrl, setImgUrl] = useState('https://i.ibb.co/G43rrjsQ/image.png');
+  const [imgUrl, setImgUrl] = useState('https://test-s2.51cto.com/images/202605/20/b04ce5698846ef6f2b4b3f2847b58e8b.png');
   const [showWebFallback, setShowWebFallback] = useState(false);
   const [retryCount, setRetryCount] = useState(0);
 
@@ -25,12 +25,18 @@ export default function HeaderBanner({ onShowToast }: HeaderBannerProps) {
   return (
     <header className="w-full relative bg-[#F2F7FC]" id="banner-container">
       {!showWebFallback ? (
-        <div className="w-full relative overflow-hidden">
+        <div className="w-full relative overflow-hidden bg-[#F2F7FC]">
           <img
             id="header-banner-img"
             src={imgUrl}
             alt="2026软考高分视频课重磅上线"
             className="w-full h-auto block align-top select-none"
+            style={{
+              imageRendering: '-webkit-optimize-contrast',
+              display: 'block',
+              backfaceVisibility: 'hidden',
+              transform: 'translateZ(0)',
+            }}
             onError={handleError}
           />
           {/* 羽化渐变层：将图片底部与网页 bg-[#F2F7FC] 淡蓝背景进行丝滑交融 */}

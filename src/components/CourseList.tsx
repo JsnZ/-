@@ -25,9 +25,6 @@ export default function CourseList({ onOpenSyllabus, onOpenConsult }: CourseList
           <div className="w-1.5 h-6 bg-blue-600 rounded-full" />
           <h2 className="text-lg font-black text-slate-900">核心高分课推荐</h2>
         </div>
-        <span className="text-xs text-blue-600 font-bold bg-blue-50 px-2 py-0.5 rounded-md border border-blue-100">
-          支持极速开课
-        </span>
       </div>
 
       {/* Tabs Layout */}

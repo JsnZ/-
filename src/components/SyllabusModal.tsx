@@ -59,14 +59,16 @@ export default function SyllabusModal({ courseId, isOpen, onClose, onConsult }: 
             <div className="p-5 overflow-y-auto space-y-5 text-[13px] leading-relaxed text-slate-600 flex-grow" id="syllabusContent">
               {data.sections.map((section, index) => (
                 <div key={index} className="space-y-2 pb-3 border-b border-dashed border-slate-100 last:border-b-0">
-                  <p className="font-extrabold text-slate-900 text-sm flex items-center">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600 mr-2 shrink-0" />
-                    {section.sectionTitle}
-                  </p>
-                  <ul className="list-none space-y-1.5 pl-3 text-[13px] text-slate-600">
+                  {section.sectionTitle !== '课程章节大纲' && (
+                    <p className="font-extrabold text-slate-900 text-sm flex items-center">
+                      <span className="w-1.5 h-1.5 rounded-full bg-blue-600 mr-2 shrink-0" />
+                      {section.sectionTitle}
+                    </p>
+                  )}
+                  <ul className="list-none space-y-1.5 pl-1.5 text-[13px] text-slate-600">
                     {section.items.map((item, idx) => (
                       <li key={idx} className="flex items-start">
-                        <span className="text-blue-500 mr-1.5 select-none font-bold">•</span>
+                        <span className="text-blue-500 mr-2 select-none font-bold">•</span>
                         <span>{item}</span>
                       </li>
                     ))}
